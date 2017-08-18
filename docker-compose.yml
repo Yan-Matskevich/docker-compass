@@ -1,8 +1,8 @@
 version: "2.2"
 
 services:
-  template:
-    image: "scoobadog/template"
+  compass:
+    image: "scoobadog/compass"
     init: true
     restart: "on-failure"
     network_mode: "none"

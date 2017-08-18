@@ -7,7 +7,20 @@ ARG VOLUME=/data
 RUN \
 apk upgrade --no-cache && \
 apk add --no-cache \
+	gcc \
+	libffi-dev \
+	make \
+	musl-dev \
+	ruby \
+	ruby-dev \
 	su-exec && \
+gem install --no-document compass && \
+apk del --no-cache \
+	gcc \
+	libffi-dev \
+	make \
+	musl-dev \
+	ruby-dev && \
 mkdir -p "${VOLUME}"
 
 VOLUME ["${VOLUME}"]
