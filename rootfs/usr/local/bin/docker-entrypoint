@@ -16,4 +16,6 @@ if [ "$1" == 'container-daemon' ]; then
 	set -- '/usr/bin/compass' watch '/data' --poll
 fi
 
+# exec '/sbin/su-exec' "${uid}:${gid}" "$@"
+# Run compass watch as root as nobody:nobody probably could not have write permission for styles folder
 exec "$@"
