@@ -16,4 +16,4 @@ if [ "$1" == 'container-daemon' ]; then
 	set -- '/usr/bin/compass' watch '/data' --poll
 fi
 
-exec '/sbin/su-exec' "${uid}:${gid}" "$@"
+exec "$@"
